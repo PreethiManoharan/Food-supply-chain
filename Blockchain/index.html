@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FoodTracking</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+ 
+  <script src="./app.js"></script>
+ 
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h3>Enter Entity Details</h3><br><br>
+      <label for="_name" class="col-lg-2 control-label">Name</label>
+      <input id="_name" type="text"><br><br>
+    
+      <label for="_addr" class="col-lg-2 control-label">Address</label>
+      <input id="_addr" type="text"><br><br>
+    
+      <label for="_entity_info" class="col-lg-2 control-label">Additional Information</label>
+      <input id="_entity_info" type="text"><br><br>
+      
+      <button id="setEntityInfo" onclick="App.setEntityInfo()">Add New Entity</button><br><br>
+
+      Block Hash:  <span id="blockHash"></span><br><br>
+      Name:  <span id="ename" type="text"></span><br><br>
+      <span id="print"></span><br><br>
+
+ </div>
+
+  <div class="container">
+      <h3>Get Entity Details</h3><br><br>
+      <label for="_name" class="col-lg-2 control-label">Address</label>
+      <input id="_address" type="text"><br>
+
+      <button id="getEntityInfo" onclick="App.getEntityInfo()">Get Entity</button><br><br>
+      Role:  <input style="border:none;background-color:transparent" id="roles"><br><br>
+      Name:  <input style="border:none;background-color:transparent" type="text" id="_name1"><br><br>
+      Address:<input style="border:none;background-color:transparent" type="text" id="_addr1"><br><br>
+      Entity Information: <input style="border:none;background-color:transparent"  type="text" id="_entity_info1"><br><br>
+  </div>
+
+  <div class="container">
+      <h3>Set Role</h3><br><br>
+      <label for="setAddress" class="col-lg-2 control-label">Address</label>
+      <input id="setAddress" type="text"><br><br>
+    
+      <label for="setRole" class="col-lg-2 control-label">Role</label>
+      <input id="setRole" type="text"><br><br>
+    
+      <label for="setAmount" class="col-lg-2 control-label">Amount</label>
+      <input id="setAmount" type="text"><br><br>
+      
+      <button type="button" onclick='document.getElementById("demo").innerHTML = "0-Producer 1-Distributor 2-Retailer"'>Conditions</button>
+      <p id="demo"></p>
+      <button id="setRole" onclick="App.setRole()">Set Role</button><br><br>
+
+  </div>
+
+  <div class="container">
+      <h3>Get Role</h3><br><br>
+
+      <label for="getAddress" class="col-lg-2 control-label">Address</label>
+      <input id="getAddress" type="text"><br><br>
+
+      <button id="getRol" onclick="App.getRole()">Get Role</button><br><br>
+      Role:  <input style="border:none;background-color:transparent" id="getRole"><br><br>
+      Name:  <input style="border:none;background-color:transparent" id="getName"><br><br>
+      Amount: <input style="border:none;background-color:transparent" id="getAmount"><br><br>
+
+  </div>
+
+  <div class="container">
+    <h3>Enter Product Details</h3><br><br>
+
+      <label for="_id" class="col-lg-2 control-label">Product ID</label>
+      <input id="_id" type="text"><br><br>
+
+      <label for="_pname" class="col-lg-2 control-label">Product Name</label>
+      <input id="_pname" type="text"><br><br>
+    
+      <label for="_organic" class="col-lg-2 control-label">Organic</label>
+      <input id="_organic" type="text"><br><br>
+    
+      <label for="_infog" class="col-lg-2 control-label">Additional Information</label>
+      <input id="_infog" type="text"><br><br>
+
+      <label for="_value" class="col-lg-2 control-label">Quantity</label>
+      <input id="_value" type="text"><br><br>
+
+      <label for="_value" class="col-lg-2 control-label">Price</label>
+      <input id="_price" type="text"><br><br>
+
+      <label for="_cond" class="col-lg-2 control-label">Condition</label>
+      <input id="_cond" type="text"><br><br>
+      
+      <button id="producerEnterProductDetails" onclick="App.producerEnterProductDetails()">Enter Product Details</button><br><br>  
+    
+  </div>
+
+  <div class="container">
+    <h3>Get Product Details</h3><br><br>
+    <label for="_pid" class="col-lg-2 control-label">Product ID</label>
+    <input id="_pid" type="text"><br>
+
+    <button id="getProductInfoByProducer1" onclick="App.getProductInfoByProducer1()">View Product Details</button><br><br>
+    Owner:  <input style="border:none;background-color:transparent" id="_roles"><br><br>
+    Name:  <input style="border:none;background-color:transparent" type="text" id="_name2"><br><br>
+    Address:<input style="border:none;background-color:transparent" type="text" id="_addr2"><br><br>
+    Entity Information: <input style="border:none;background-color:transparent"  type="text" id="_entity_info2"><br><br>
+
+    Product Name:  <input style="border:none;background-color:transparent" id="_pname1"><br><br>
+    Organic:  <input style="border:none;background-color:transparent" type="text" id="_porg"><br><br>
+    Product info:<input style="border:none;background-color:transparent" type="text" id="_pinfo"><br><br>
+    Product Value: <input style="border:none;background-color:transparent"  type="text" id="_pvalue"><br><br>
+    Product Price: <input style="border:none;background-color:transparent"  type="text" id="_pprice"><br><br>
+    Mfg Date:  <input style="border:none;background-color:transparent" id="_ptime"><br><br>
+</div>
+
+<div class="container">
+  <h3>Distributor Make payment</h3><br><br>
+  <label for="_dpid" class="col-lg-2 control-label">Enter Product ID</label>
+  <input id="_dpid" type="text"><br>
+
+  <label for="_damt" class="col-lg-2 control-label">Enter Amount</label>
+  <input id="_damt" type="text"><br>
+
+  <label for="_daddr" class="col-lg-2 control-label">Enter Address</label>
+  <input id="_daddr" type="text"><br>
+
+  <label for="_dcond" class="col-lg-2 control-label">Enter Condition</label>
+  <input id="_dcond" type="text"><br>
+
+  <button id="getAmount" onclick="App.paymentByDistributor()">Purchase</button><br><br>
+  Block Hash:  <span id="blockHash1"></span><br><br>
+  <span id="print1"></span><br><br>
+
+</div>
+
+<div class="container">
+  <h3>Enter Distributor Details</h3><br><br>
+    <label for="_dppid" class="col-lg-2 control-label">Product ID</label>
+    <input id="_dppid" type="text"><br><br>
+  
+    <label for="_dpinfo" class="col-lg-2 control-label">Product Info</label>
+    <input id="_dpinfo" type="text"><br><br>
+  
+    <label for="_dpvalue" class="col-lg-2 control-label">Product Value</label>
+    <input id="_dpvalue" type="text"><br><br>
+
+    <label for="_dpcond" class="col-lg-2 control-label">Condition</label>
+    <input id="_dpcond" type="text"><br><br>
+    
+    <button id="enterDistributorDetails" onclick="App.enterDistributorDetails()">Enter Product Details</button><br><br>
+
+</div>
+
+<div class="container">
+  <h3>Get Product Details</h3><br><br>
+  <label for="_pid1" class="col-lg-2 control-label">Product ID</label>
+  <input id="_pid1" type="text"><br>
+
+  <button id="getProductInfoByDistributor1" onclick="App.getProductInfoByDistributor1()">View Product Details</button><br><br>
+  Owner:  <input style="border:none;background-color:transparent" id="_roles3"><br><br>
+  Name:  <input style="border:none;background-color:transparent" type="text" id="_name3"><br><br>
+  Address:<input style="border:none;background-color:transparent" type="text" id="_addr3"><br><br>
+  Entity Information: <input style="border:none;background-color:transparent"  type="text" id="_entity_info3"><br><br>
+
+  Product info:  <input style="border:none;background-color:transparent" id="_pinfo3"><br><br>
+  Product Value:  <input style="border:none;background-color:transparent" type="text" id="_pvalue3"><br><br>
+  Mfg Date:<input style="border:none;background-color:transparent" type="text" id="_ptime3"><br><br>
+  
+</div>
+
+<div class="container">
+  <h3>Retailer Make payment</h3><br><br>
+  <label for="_drpid" class="col-lg-2 control-label">Enter Product ID</label>
+  <input id="_drpid" type="text"><br>
+
+  <label for="_dramt" class="col-lg-2 control-label">Enter Amount</label>
+  <input id="_dramt" type="text"><br>
+
+  <label for="_draddr" class="col-lg-2 control-label">Enter Address</label>
+  <input id="_draddr" type="text"><br>
+
+  <label for="_drcond" class="col-lg-2 control-label">Enter Condition</label>
+  <input id="_drcond" type="text"><br>
+
+  <button id="getAmountR" onclick="App.paymentByRetailer()">Purchase</button><br><br>
+  Block Hash:  <span id="blockHash2"></span><br><br>
+  <span id="print2"></span><br><br>
+  
+</div>
+
+<div class="container">
+  <h3>Enter Retailer Details</h3><br><br>
+    <label for="_rpid" class="col-lg-2 control-label">Product ID</label>
+    <input id="_rpid" type="text"><br><br>
+  
+    <label for="_rinfo" class="col-lg-2 control-label">Product Info</label>
+    <input id="_rinfo" type="text"><br><br>
+  
+    <label for="_rvalue" class="col-lg-2 control-label">Product Value</label>
+    <input id="_rvalue" type="text"><br><br>
+
+    <label for="_rcond" class="col-lg-2 control-label">Condition</label>
+    <input id="_rcond" type="text"><br><br>
+    
+    <button id="enterRetailerDetails" onclick="App.enterRetailerDetails()">Enter Product Details</button><br><br>
+
+</div>
+
+<div class="container">
+  <h3>Get Product Details</h3><br><br>
+  <label for="_rpid" class="col-lg-2 control-label">Product ID</label>
+  <input id="_rpid" type="text"><br>
+
+  <button id="getProductInfoByRetailer1" onclick="App.getProductInfoByRetailer1()">View Product Details</button><br><br>
+  Owner:  <input style="border:none;background-color:transparent" id="_rroles"><br><br>
+  Name:  <input style="border:none;background-color:transparent" type="text" id="_rname"><br><br>
+  Address:<input style="border:none;background-color:transparent" type="text" id="_raddr"><br><br>
+  Entity Information: <input style="border:none;background-color:transparent"  type="text" id="_rentity_info"><br><br>
+
+  Product info:  <input style="border:none;background-color:transparent" id="_rpinfo"><br><br>
+  Product Value:  <input style="border:none;background-color:transparent" type="text" id="_rpvalue"><br><br>
+  Mfg Date:<input style="border:none;background-color:transparent" type="text" id="_rptime"><br><br>
+  
+</div>
+
+<div class="container">
+  <h3>Get Product Details</h3><br><br>
+  <label for="_pid3" class="col-lg-2 control-label">Product ID</label>
+  <input id="_pid3" type="text"><br>
+
+  <button id="getBasicProductInfo1" onclick="App.getBasicProductInfo1()">View Product Details</button><br><br>
+  
+  Producer Name:  <input style="border:none;background-color:transparent" type="text" id="_rcname"><br><br>
+  Producer Address:<input style="border:none;background-color:transparent" type="text" id="_rcaddr"><br><br>
+  Entity Information: <input style="border:none;background-color:transparent"  type="text" id="_rcentity_info"><br><br>
+  Organic: <input style="border:none;background-color:transparent"  type="text" id="_rcorganic"><br><br>
+  Product Information: <input style="border:none;background-color:transparent"  type="text" id="_rcpinfo"><br><br>
+  
+
+  Retailer Name:  <input style="border:none;background-color:transparent" id="_rcname1"><br><br>
+  Retailer Address:  <input style="border:none;background-color:transparent" type="text" id="_rpcaddr"><br><br>
+  Retailer Info:<input style="border:none;background-color:transparent" type="text" id="_rcinfo"><br><br>
+  
+</div>
+
+<div class="container">
+  <h3>Get Balance</h3><br><br>
+  
+  <button id="getAmount" onclick="App.getAmount()">View Balance</button><br><br>
+  Amount:  <input style="border:none;background-color:transparent" id="_amt"><br><br>    
+</div>
+  <span id="message" /> 
+</body>
